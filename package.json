@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "PORT=9500 COAP_CLIENT_PATH=/usr/local/bin/coap-client HUB_IP_ADDRESS=192.168.0.156 SECURITY_ID=mycode node app.js",
+    "start": "PORT=9500 COAP_CLIENT_PATH=/usr/local/bin/coap-client HUB_IP_ADDRESS=192.168.0.156 SECURITY_ID=mycode node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

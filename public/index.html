@@ -1,15 +1,18 @@
 <html>
 	<script src="https://aframe.io/releases/0.6.1/aframe.js"></script>
 	<script src="js/aframe-ar.js"></script>
+<!--    <script> AFRAME.registerComponent('play-on-scan', { init: function () { var el = this.el; el.sceneEl.addEventListener('markerFound', function () { el.setAttribute('animation-mixer', {clip: '*', loop: 'once'} }); el.emit('ar-ready') }}); 
+         	</script>-->
 	<script src="https://unpkg.com/aframe-text-component/dist/aframe-text-component.min.js"></script>
 	<script src="js/index.js"></script>
 	<body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' >
-    <a-marker type='pattern' url='patterns/w.patt' id="Keukentafel">
-			 <a-box position="-0.3 0.1 0" id="off" data-state="off" data-lamp-id="Keukentafel" cursor-listener width="0.2" height="0.05" rotation="0 0 0" color="#F03F35"></a-box>
-			 <a-box position="0 0.1 0" id="cool" data-state="on" data-lamp-id="Keukentafel" cursor-listener width="0.2" height="0.1" rotation="0 0 0" color="#F5FAFA"></a-box>
-	     <a-box position="0.3 0.1 0" id="normal" data-state="on" data-lamp-id="Keukentafel" cursor-listener width="0.2" height="0.1" rotation="0 0 0" color="#F8EAC9"></a-box>
-	     <a-box position="0.6 0.1 0" id="warm" data-state="on" data-lamp-id="Keukentafel" cursor-listener width="0.2" height="0.1" rotation="0 0 0" color="#E7CB71"></a-box>
+      <a-assets>
+<!-- id=“file name“ src=“file url" -->
+<a-asset-item id="makery" src="https://cdn.rawgit.com/Dmart331/_Arjs/master/Army%20Helm.gltf"></a-asset-item>
+</a-assets>
+    <a-marker type='pattern' url='https://cdn.rawgit.com/Dmart331/_Arjs/master/usaalogo.patt' id="Keukentafel">
+<a-entity scale="0.000015 0.000015 0.00002 " position="-0.5 -0.5 -0.5 " gltf-model="#makery"></a-entity>
     </a-marker>
 		<a-marker preset="hiro" id="Leeslamp">
 			<a-box position="-0.3 0.1 0" id="off" data-state="off" data-lamp-id="Leeslamp" cursor-listener width="0.2" height="0.05" rotation="0 0 0" color="#F03F35"></a-box>
