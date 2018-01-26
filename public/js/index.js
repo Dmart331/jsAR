@@ -1,6 +1,6 @@
  
 
-var activeElement = "";
+
 
  AFRAME.registerComponent('play-on-scan-drew', { 
   init: function () { 
