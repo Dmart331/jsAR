@@ -1,26 +1,45 @@
-AFRAME.registerComponent('cursor-listener', {
-  init: function () {
-    this.el.addEventListener('click', function (evt) {
-      let $color = $(evt.detail.target);
-      let state = $color.data("state");;
-      restUpdate({
-        name: $color.data("lamp-id"),
-        state: state,
-        color: evt.detail.target.id
+ 
+
+var activeElement = "";
+
+ AFRAME.registerComponent('play-on-scan-drew', { 
+  init: function () { 
+    var el = this.el;
+    
+    el.sceneEl.addEventListener('markerFound', function(){
+      activeElement = el.id;
       });
-    });
-  }
+
+    }
+      checkActive();
 });
 
-function restUpdate(lamp){
-$.ajax({
-  type: "POST",
-  url: '/api/ikea/update',
-  data: {
-    id 			: 65538,
-    name 		: lamp.name,
-    state 	: lamp.state,
-    color   : lamp.color
-  }
+AFRAME.registerComponent('play-on-scan-lee', {
+  init: function(){
+    var el = this.el;
+    
+    el.sceneEl.addEventListener('markerFound', function(){
+      activeElement = el.id;
+      });
+    }
+    checkActive();
+    
 });
+
+function checkActive(){
+  console.log(activeElement);
+      if(activeElement == "leeSound"){
+        var entity = document.getElementById("leeSound");
+        entity.components.sound.playSound();
+        console.log("lee");
+      }
+
+      else if(activeElement == "drewSound"){
+            var entity = document.getElementById("drewSound"); 
+            entity.components.sound.playSound();
+            console.log("drew");
+      }
 }
+
+
+
