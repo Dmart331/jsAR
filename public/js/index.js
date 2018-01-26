@@ -11,7 +11,6 @@ var activeElement = "";
       });
 
     }
-      checkActive();
 });
 
 AFRAME.registerComponent('play-on-scan-lee', {
@@ -22,8 +21,6 @@ AFRAME.registerComponent('play-on-scan-lee', {
       activeElement = el.id;
       });
     }
-    checkActive();
-    
 });
 
 function checkActive(){
