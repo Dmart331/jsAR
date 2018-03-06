@@ -3,21 +3,10 @@
 	<script src="js/aframe-ar.js"></script>
 	<script src="js/index.js"></script>
 	<script src="https://unpkg.com/aframe-text-component/dist/aframe-text-component.min.js"></script>
-	<script src="https://cdn.rawgit.com/gasolin/aframe-href-component/master/dist/aframe-href-component.min.js"></script> 
+	<script src="https://cdn.rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js"></script>
 	<body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;' >
-  	<a-entity camera look-controls wasd-controls>
-  		<a-entity position="0 0 -1"
-				  size="0.5 0.5 0.5"
-					geometry="primitive: ring; radiusInner: 0.2; radiusOuter: 0.3;"
-					material="color: cyan; shader: flat"
-					cursor="maxDistance: 30; fuse: true">
-  			<a-animation begin="click" easing="ease-in" attribute="scale"
-						   fill="forwards" from="0.2 0.2 0.2" to="1 1 1" dur="150"></a-animation>
-  			<a-animation begin="fusing" easing="ease-in" attribute="scale"
-						   fill="backwards" from="1 1 1" to="0.2 0.2 0.2" dur="1500"></a-animation>
-  		</a-entity>
-  	</a-entity>
+
 
   		<a-assets>
   			<!-- id=“file name“ src=“file url" -->
@@ -29,22 +18,14 @@
 
   			<a-asset-item id="makery" src="https://cdn.rawgit.com/Dmart331/_Arjs/master/Army%20Helm.gltf"></a-asset-item>
 
-
-		  	<a-mixin id="cube" geometry="primitive: box"></a-mixin>
-		  	<a-mixin id="cube-hovered" material="color: magenta"></a-mixin>
-		  	<a-mixin id="cube-selected" material="color: cyan"></a-mixin>
-		  	<a-mixin id="red" material="color: red" ></a-mixin>
-		  	<a-mixin id="green" material="color: green"></a-mixin>
-		  	<a-mixin id="blue" material="color: blue"></a-mixin>
-		  	<a-mixin id="yellow" material="color: yellow"></a-mixin>
-		  	<a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
   		</a-assets>
 
   		<a-marker type='pattern' url='https://cdn.rawgit.com/Dmart331/_Arjs/master/leepatt.patt' id="lee">
-		  	<a-box id="orange-cube" position="0 0 0" rotation="0 0 0"
-				 width="1 depth="1" height="1" color="#F16745"
-				 href="https://github.com/gasolin/aframe-href-component">
-			</a-box>
+		  	<a-box position="0 3.5 -2" rotation="30 30 0" color="skyblue"
+				 event-set__enter="_event: mouseenter; material.color: yellowgreen; scale: 3 1 1"
+				 event-set__leave="_event: mouseleave; material.color: skyblue; scale: 1 1 1">
+		  		<a-animation attribute="rotation" begin="click" dur="500" fill="backwards" to="30 30 360"></a-animation>
+		  	</a-box>
   		</a-marker>
 
   		<a-marker type='pattern' url='https://cdn.rawgit.com/Dmart331/_Arjs/master/drewbb.patt' id="drew">
@@ -63,7 +44,11 @@
   			<a-box position="0.6 0.1 0" id="warm" width="0.2" data-lamp-id="Leeslamp" cursor-listener data-state="on" height="0.1" rotation="0 0 0" color="#E7CB71"></a-box>
   		</a-marker>
   		<!-- define a simple camera -->
-
+  	<a-entity position="0 1.8 4">
+  		<a-entity camera look-controls mouse-cursor>
+  			<a-cursor fuse="true" color="yellow"></a-cursor>
+  		</a-entity>
+  	</a-entity>
 </a-scene>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	</body>
