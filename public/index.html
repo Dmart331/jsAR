@@ -32,17 +32,17 @@
 		  	<a-mixin id="cube" geometry="primitive: box"></a-mixin>
 		  	<a-mixin id="cube-hovered" material="color: magenta"></a-mixin>
 		  	<a-mixin id="cube-selected" material="color: cyan"></a-mixin>
-		  	<a-mixin id="red" material="color: red" href="https://github.com/gasolin/aframe-href-component"></a-mixin>
+		  	<a-mixin id="red" material="color: red" ></a-mixin>
 		  	<a-mixin id="green" material="color: green"></a-mixin>
 		  	<a-mixin id="blue" material="color: blue"></a-mixin>
 		  	<a-mixin id="yellow" material="color: yellow"></a-mixin>
 		  	<a-mixin id="sphere" geometry="primitive: sphere"></a-mixin>
   		</a-assets>
   		<a-marker type='pattern' url='https://cdn.rawgit.com/Dmart331/_Arjs/master/leepatt.patt' id="lee">
-		  	<a-entity position="0 0 0">
-		  		<a-entity mixin="cube red" >
-		  		</a-entity>
-		  	</a-entity>
+		  	<a-box id="orange-cube" position="0 3.5 -2" rotation="30 30 0"
+				 width="2" depth="2" height="2" color="#F16745"
+				 href="https://github.com/gasolin/aframe-href-component">
+			</a-box>
   		</a-marker>
 
   		<a-marker type='pattern' url='https://cdn.rawgit.com/Dmart331/_Arjs/master/drewbb.patt' id="drew">
