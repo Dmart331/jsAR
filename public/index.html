@@ -17,13 +17,12 @@
   			<a-asset-item id="drew-mtl" src="https://cdn.rawgit.com/Dmart331/_Arjs/master/Drew_Plane3.mtl"></a-asset-item>
 
   			<a-asset-item id="makery" src="https://cdn.rawgit.com/Dmart331/_Arjs/master/Army%20Helm.gltf"></a-asset-item>
+			<a-asset-item id="nike" src ="https://cdn.rawgit.com/Dmart331/_Arjs/master/scene.gltf"></a-asset-item>
 
   		</a-assets>
 
   		<a-marker type='pattern' url='https://cdn.rawgit.com/Dmart331/_Arjs/master/nike.patt' id="lee">
-		  	<a-box click="" position="0 0 0" rotation="30 30 0" color="skyblue"
-				
-		  	</a-box>
+			<a-entity gltf-model="#tree"></a-entity>
   		</a-marker>
 
   		<a-marker type='pattern' url='https://cdn.rawgit.com/Dmart331/_Arjs/master/drewbb.patt' id="drew">
@@ -43,8 +42,7 @@
   		</a-marker>
   		<!-- define a simple camera -->
   	<a-entity position="0 1.8 4">
-  		<a-entity camera look-controls mouse-cursor>
-  			<a-cursor fuse="true" color="yellow"></a-cursor>
+  		<a-entity camera>
   		</a-entity>
   	</a-entity>
 </a-scene>
